@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Квест: Найди код</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Квест: Тайна замка</h1>
+        <p>Подсказка: Сколько будет 2 + 2 * 2?</p>
+        
+        <input type="text" id="answer" placeholder="Введите ответ">
+        <button onclick="checkAnswer()">Проверить</button>
+        
+        <p id="hint"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value.toLowerCase();
+            const correctAnswer = "6"; // Правильный ответ
+            
+            if (userAnswer === correctAnswer) {
+                window.location.href = "success.html"; // Перенаправление при успехе
+            } else {
+                document.getElementById('hint').innerHTML = "❌ Неверно! Попробуй еще.";
+            }
+        }
+    </script>
+</body>
+</html>
